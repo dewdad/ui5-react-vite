@@ -16,19 +16,24 @@ import {
 
 export function DataTable({
     data,
-    tableFields
+    tableFields,
+    ...props // forward all props for @type {Table}
 }) {
-    return <Table columns={React.Children.toArray(tableFields.map(column => (
+
+    // assigns keys to each child in a flat array. see here https://reactjs.org/docs/react-api.html#reactchildrentoarray
+    const mapJsxChildren = (arr, mapper) => React.Children.toArray(arr.map(mapper));
+
+    return <Table {...props} columns={mapJsxChildren(tableFields, fieldName => (
         <TableColumn minWidth={600} popinText="{column}">
-            <Label>{column}</Label>
+            <Label>{fieldName}</Label>
         </TableColumn>
-    )))}>
+    ))}>
         {React.Children.toArray(data.map(row => (
-            <TableRow>{React.Children.toArray(tableFields.map(fieldName => (
+            <TableRow>{mapJsxChildren(tableFields,fieldName => (
                 <TableCell>
                     <Label>{String(row[fieldName])}</Label>
                 </TableCell>
-            )))}
+            ))}
             </TableRow>
         )))}
     </Table >;

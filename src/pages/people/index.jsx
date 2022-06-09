@@ -21,17 +21,14 @@ const People = () => {
     const navigate = useNavigate();
     const [page, setPage] = useState(0);
     const { data, error } = usePeople();
-
-    console.log({ data, error });
-
+    //console.log({ data, error });
     const isLoading = !data;
+    const navToDetailsPage = e => navigate(`${e.detail.item.dataset.id}`);
 
     if (data) {
         var tableFields = Object.keys(data[0]).filter(key => !(/By|At/i).test(key))
     }
     console.log({ tableFields });
-
-    //const { data, isLoading } = Promise.resolve({ data: {}, isLoading: false }); // useBaseMaterials(page);
 
     // const navToTodoEditPage = (e) => {
     //     navigate(getRoute(ROUTES.TODO_EDIT, { id: e.detail.item.dataset.id }));
@@ -47,7 +44,7 @@ const People = () => {
                         {/* <Title level={TitleLevel.H5}>{`Records (${data.numberOfElements} / ${data.totalElements})`}</Title> */}
                         <Title level={TitleLevel.H5}>People</Title>
                         <br />
-                        <DataTable data={data} tableFields={tableFields} />
+                            <DataTable data={data} tableFields={tableFields} onRowClick={navToDetailsPage}/>
                         {/* <Pagination
                             numberOfElements={data.numberOfElements}
                             totalPages={data.totalPages}
