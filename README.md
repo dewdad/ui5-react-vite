@@ -20,8 +20,6 @@ A template for business developers looking to quickly develop and prototype UI5/
 
 - ☁️ Deploy on Netlify, zero-config
 
-- ![Alt text](https://api.iconify.design/vscode-icons:file-type-light-pnpm.svg) [pnpm](https://pnpm.io/)
-
 - ![Alt text](https://api.iconify.design/logos:vitejs.svg) [Vite](https://github.com/vitejs/vite)
 
 - ![Alt text](https://api.iconify.design/vscode-icons:file-type-reactjs.svg) [React](https://github.com/facebook/react) and [UI5 Web Components for React](https://sap.github.io/ui5-webcomponents-react/?path=/docs/getting-started--page)
