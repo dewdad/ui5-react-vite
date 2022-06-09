@@ -18,13 +18,13 @@ A template for business developers looking to quickly develop and prototype UI5/
 
 - 🦾 TypeScript, of course
 
-- ☁️ Deploy on Netlify, zero-config
-
 - ![Alt text](https://api.iconify.design/logos:vitejs.svg) [Vite](https://github.com/vitejs/vite)
 
 - ![Alt text](https://api.iconify.design/vscode-icons:file-type-reactjs.svg) [React](https://github.com/facebook/react) and [UI5 Web Components for React](https://sap.github.io/ui5-webcomponents-react/?path=/docs/getting-started--page)
 
 - <img src="https://api.iconify.design/logos:swr.svg" title="" alt="Alt text" width="35"> [SWR](https://swr.vercel.app/) for data fetching, caching, mutations and revalidation
+  
+  <!-- - ☁️ Deploy on Netlify, zero-config -->
   
   <!-- - 😃 Use icons from any icon sets in [Pure CSS](https://github.com/antfu/unocss/tree/main/packages/preset-icons) -->
 
@@ -59,10 +59,10 @@ Inspired by the amazing [Vitesse](https://github.com/antfu/vitesse) template.
 If you prefer to do it manually with the cleaner git history
 
 ```bash
-$ npx degit dewdad/ui5-react-vite my-fiori-app
-$ cd my-fiori-app
-$ npm i
-$ npm run start
+npx degit dewdad/ui5-react-vite my-fiori-app
+cd my-fiori-app
+npm i
+npm run start
 ```
 
 ## Features Roadmap

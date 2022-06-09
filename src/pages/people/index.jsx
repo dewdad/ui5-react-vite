@@ -45,7 +45,7 @@ const People = () => {
                 ) : (
                     <>
                         {/* <Title level={TitleLevel.H5}>{`Records (${data.numberOfElements} / ${data.totalElements})`}</Title> */}
-                        <Title level={TitleLevel.H5}>{`Records (10 / 10)`}</Title>
+                        <Title level={TitleLevel.H5}>People</Title>
                         <br />
                         <DataTable data={data} tableFields={tableFields} />
                         {/* <Pagination
