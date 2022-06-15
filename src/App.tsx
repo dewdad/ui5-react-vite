@@ -11,7 +11,7 @@ import ErrorBoundary from '~/pages/Fallback/ErrorBoundary';
 export default function App() {
   const { t } = useTranslation();
 
-  _set(window, 'appDemo.routes', routes);
+  _set(window, '__appDebugger.routes', routes);
   return (
     <main className="font-sans px-4 py-10 text-center text-gray-700 dark:text-gray-200">
       <Router>

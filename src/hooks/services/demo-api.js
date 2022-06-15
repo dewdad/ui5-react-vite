@@ -7,7 +7,7 @@ const PEOPLE_PATH = 'People';
 // handler
 const cmAPI = o('/demo-api/');
 
-_set(window, 'appDemo.api.cmAPI', cmAPI);
+_set(window, '__appDebugger.api.cmAPI', cmAPI);
 
 
 async function fetcher(url) {
