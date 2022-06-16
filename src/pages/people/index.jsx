@@ -5,12 +5,12 @@ import {
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CenteredContent from '~/components/Layout/CenteredContent';
-import { usePeople } from '~/hooks/services/demo-api';
+import { useApiByRoute } from '~/hooks/services/demo-api';
 
 export default function People() {
     const navigate = useNavigate();
     const [page, setPage] = useState(0);
-    const { data, error } = usePeople();
+    const { data, error } = useApiByRoute();
     /** @type {import('@ui5/webcomponents-react').AnalyticalTableColumnDefinition[]} */
     let tableFields = [];
     //console.log({ data, error });

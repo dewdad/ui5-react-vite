@@ -84,7 +84,7 @@ npm run start
   - [ ] File based routing with [vite-plugin-pages](https://github.com/hannoeru/vite-plugin-pages) (auto-generated)
   
   - [General Best Practices for Routing](https://www.bigbinary.com/react-best-practices/best-practices-in-react-routing)
-
+  
   - [ ] Enable Launchpad Service integration by supporting semantic objects + pre-filling of fields when navigating
 
 - [x] Front-end tooling with [Vite](https://vitejs.dev/) instead of ([CRAs Webpack](https://www.youtube.com/watch?v=-KEuTPIpLbE)) for application lifecycle management
@@ -124,16 +124,16 @@ npm run start
 - [ ] State Management with [**Storeon**](https://github.com/storeon/storeon/blob/main/README.md), a tiny, redux-like state manager.
 
 - SAP Product Integration
-
+  
   - [ ] Integration with Launchpad Service
   - [ ] Theme selection via Launchpad settings
 
 - Developer Experience
-
+  
   - [ ] Testing Launchpad navigation locally
 
 - Ideas for UI Samples
-
+  
   - [ ] Filterbar with Go button, filters and fuzzy search
   - [ ] Tabbed sections on the Object Page
   - [ ] Texts and Text Arrangement for data fields
