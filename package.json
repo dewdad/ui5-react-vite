@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "build": "vite build",
+    "build": "vite build && cp manifest.json dist/",
     "start": "vite --port 3333 --open",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
@@ -46,9 +46,19 @@
     "unplugin-auto-import": "^0.7.2",
     "vite": "^2.9.9",
     "vite-plugin-pages": "^0.23.0",
-    "vitest": "^0.12.9"
+    "vitest": "^0.12.9",
+    "@sap/ui5-builder-webide-extension": "^1.1.7",
+    "ui5-task-zipper": "^0.3.1",
+    "mbt": "^1.0.15"
   },
   "eslintConfig": {
     "extends": "@antfu"
+  },
+  "ui5": {
+    "dependencies": [
+      "@sap/ui5-builder-webide-extension",
+      "ui5-task-zipper",
+      "mbt"
+    ]
   }
 }

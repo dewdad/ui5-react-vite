@@ -1,0 +1,9 @@
+{
+    "_version": "1.37.0",
+    "sap.app": {
+        "id": "ui5-react-vite",
+        "applicationVersion": {
+            "version": "1.0.0"
+        }
+    }
+}
