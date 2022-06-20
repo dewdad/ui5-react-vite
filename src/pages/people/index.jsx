@@ -1,5 +1,5 @@
 import {
-    AnalyticalTable, BusyIndicator, Icon, TableSelectionBehavior, TableSelectionMode, Title,
+    AnalyticalTable, Icon, TableSelectionBehavior, TableSelectionMode, Title,
     TitleLevel
 } from '@ui5/webcomponents-react';
 import { useState } from 'react';
@@ -13,8 +13,6 @@ export default function People() {
     const { data, error } = useApiByRoute();
     /** @type {import('@ui5/webcomponents-react').AnalyticalTableColumnDefinition[]} */
     let tableFields = [];
-    //console.log({ data, error });
-    const isLoading = !data;
 
     function navToDetailsPage(e) {
         console.log(arguments);
@@ -41,22 +39,16 @@ export default function People() {
     return (
         <CenteredContent>
             <div>
-                {isLoading ? (
-                    <BusyIndicator active />
-                ) : (
-                    <>
-                        {/* <Title level={TitleLevel.H5}>{`Records (${data.numberOfElements} / ${data.totalElements})`}</Title> */}
-                        <Title level={TitleLevel.H5}>People</Title>
-                        <br />
-                        <AnalyticalTable data={data} columns={tableFields} onRowClick={navToDetailsPage} withNavigationHighlight={true} withRowHighlight={true} filterable={true} selectionMode={TableSelectionMode.SingleSelect} selectionBehavior={TableSelectionBehavior.RowOnly} />
-                        {/* <Pagination
-                            numberOfElements={data.numberOfElements}
-                            totalPages={data.totalPages}
-                            selectedPage={data.number}
-                            setPage={(params) => setPage(params)}
-                        /> */}
-                    </>
-                )}
+                {/* <Title level={TitleLevel.H5}>{`Records (${data.numberOfElements} / ${data.totalElements})`}</Title> */}
+                <Title level={TitleLevel.H5}>People</Title>
+                <br />
+                <AnalyticalTable data={data} columns={tableFields} onRowClick={navToDetailsPage} withNavigationHighlight={true} withRowHighlight={true} filterable={true} selectionMode={TableSelectionMode.SingleSelect} selectionBehavior={TableSelectionBehavior.RowOnly} />
+                {/* <Pagination
+                    numberOfElements={data.numberOfElements}
+                    totalPages={data.totalPages}
+                    selectedPage={data.number}
+                    setPage={(params) => setPage(params)}
+                /> */}
             </div>
         </CenteredContent>
     );

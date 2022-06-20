@@ -33,7 +33,9 @@ _set(window.demoAPI, 'api.cmFetch', fetcher);
 export function useApiByRoute(){
   const explicitRouteToAPIMap = {}; // all non-conventional mappings go here
   const {entity,id} = routeToODataQuery(explicitRouteToAPIMap)
-  let o = useSWR(entity+(id ? `('${id}')`: ''), fetcher)
+  let o = useSWR(entity+(id ? `('${id}')`: ''), fetcher, {
+    suspense: true
+  });
   console.log('useApiByRoute', entity+(id ? `('${id}')`: ''))
   return o;
 }

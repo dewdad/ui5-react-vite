@@ -7,6 +7,7 @@ import { set as _set } from 'lodash'
 
 import Shell from '~/components/Shell/Shell';
 import ErrorBoundary from '~/pages/Fallback/ErrorBoundary';
+import { BusyIndicator } from '@ui5/webcomponents-react';
 
 export default function App() {
   const { t } = useTranslation();
@@ -27,8 +28,10 @@ export default function App() {
 
 function Routes() {
   return (
-    <Suspense fallback={<p>Loading...</p>}>
+    <Suspense fallback={<BusyIndicator active />}>
       {useRoutes(routes)}
     </Suspense>
   )
 }
+
+
