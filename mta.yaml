@@ -1,0 +1,109 @@
+_schema-version: "3.1"
+ID: ui5-react-vite
+description: UI5 + React + Vite
+version: 1.0.0
+modules:
+- name: ui5-react-vite-ui-deployer
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: ui5-react-vite-repo-host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - dist.zip
+      name: ui5_react_vite
+      target-path: resources/
+
+- name: ui5-react-vite-app-content
+  type: com.sap.application.content
+  requires:
+  - name: ui5-react-vite-repo-host
+    parameters:
+      service-key:
+        name: ui5-react-vite-repo-host-key
+  - name: ui5-react-vite-uaa
+    parameters:
+      service-key:
+        name: ui5-react-vite-uaa-key
+  - name: ui5-react-vite-destination-service
+    parameters:
+      content-target: true
+  parameters:
+    content:
+      instance:
+        destinations:
+        - Name: ui5reactvite_service_repo_host
+          ServiceInstanceName: ui5-react-vite-repo-host
+          ServiceKeyName: ui5-react-vite-repo-host-key
+          sap.cloud.service: ui5.react.vite
+        - Authentication: OAuth2UserTokenExchange
+          Name: ui5reactvite_service_uaa
+          ServiceInstanceName: ui5-react-vite-uaa
+          ServiceKeyName: ui5-react-vite-uaa-key
+          sap.cloud.service: ui5.react.vite
+        existing_destinations_policy: update
+  build-parameters:
+    no-source: true
+
+#- name: ui_deployer
+#  type: com.sap.html5.application-content
+#  path: deployer
+#  requires:
+#    - name: ui5-react-vite-repo-host
+#  build-parameters:
+#    builder: custom
+#    commands:
+#      - npm run build -prefix ..
+
+- name: ui5_react_vite
+  type: html5
+  path: ./
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build
+    supported-platforms: []
+resources:
+- name: ui5-react-vite-repo-host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-plan: app-host
+- name: ui5-react-vite-uaa
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      tenant-mode: dedicated
+      xsappname: ui5-react-vite-${space}
+    path: ./xs-security.json
+    service: xsuaa
+    service-plan: application
+
+- name: ui5-react-vite-destination-service
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      HTML5Runtime_enabled: true
+      init_data:
+        instance:
+          destinations:
+          - Authentication: NoAuthentication
+            Name: ui5
+            ProxyType: Internet
+            Type: HTTP
+            URL: https://ui5.sap.com
+          existing_destinations_policy: update
+      version: 1.0.0
+    service: destination
+    service-name: ui5-react-vite-destination-service
+    service-plan: lite
+
+parameters:
+  deploy_mode: html5-repo
+  enable-parallel-deployments: true

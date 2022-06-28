@@ -1,12 +1,14 @@
 {
+  "name": "ui5-react-vite",
   "private": true,
   "scripts": {
-    "build": "vite build && cp manifest.json dist/",
+    "build": "vite build && cp manifest.json dist/ && cp xs-app.json dist/ && (cp -r dist resources/ && cd resources/ && zip -r -m dist.zip .) && cp -r dist deployer/resources/",
     "start": "vite --port 3333 --open",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "preview": "vite preview",
-    "test": "vitest"
+    "test": "vitest",
+    "serve": "vite serve"
   },
   "dependencies": {
     "@types/lodash": "^4.14.182",

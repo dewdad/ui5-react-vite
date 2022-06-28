@@ -2,8 +2,24 @@
     "_version": "1.37.0",
     "sap.app": {
         "id": "ui5-react-vite",
+        "type": "application",
         "applicationVersion": {
             "version": "1.0.0"
+        },
+        "crossNavigation": {
+            "inbounds": {
+                "ui5reactvite": {
+                    "signature": {
+                        "parameters": {},
+                        "additionalParameters": "allowed"
+                    },
+                    "semanticObject": "UI5ReactVite",
+                    "action": "display"
+                }
+            }
         }
+    },
+    "sap.cloud": {
+        "service": "ui5.react.vite"
     }
 }
