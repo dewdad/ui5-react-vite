@@ -8,6 +8,8 @@ import '@ui5/webcomponents-fiori/dist/Assets.js';
 import '@ui5/webcomponents-react/dist/Assets.js';
 import '@ui5/webcomponents/dist/features/InputElementsFormSupport.js';
 
+import "~/styles/main.css"
+
 declare global {
   interface Window {
     demoAPI: any;

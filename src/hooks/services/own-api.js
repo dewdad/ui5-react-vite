@@ -1,6 +1,6 @@
 import { o } from 'o.js';
 import useSWR from 'swr'
-import { set as _set, camelCase, startCase, kebabCase } from 'lodash';
+import { set as _set, camelCase, startCase } from 'lodash';
 
 
 const kebabCaseToPascalCase = (str) => startCase(camelCase(str)).replace(/ /g, '');
@@ -15,15 +15,15 @@ function routeToODataQuery(explicitRouteToAPIMap){
 }
 
 // handler
-const cmAPI = o('/demo-api/');
+const ownAPI = o('/api/');
 
-_set(window, '__appDebugger.api.cmAPI', cmAPI);
+_set(window, '__appDebugger.api.cmAPI', ownAPI);
 
 async function fetcher(url) {
   let currentLocation = location.href;
   console.log({currentLocation});
   //console.log('cmFetch-req',...arguments);
-  const res = await cmAPI.get(url).query();
+  const res = await ownAPI.get(url).query();
   //console.log('cmFetch-res',...arguments, {res});
   return res
 }

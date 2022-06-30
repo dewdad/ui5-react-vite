@@ -5,7 +5,7 @@ import {
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CenteredContent from '~/components/Layout/CenteredContent';
-import { useApiByRoute } from '~/hooks/services/demo-api';
+import { useApiByRoute } from '~/hooks/services/own-api';
 
 export default function People() {
     const navigate = useNavigate();

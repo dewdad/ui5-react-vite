@@ -50,10 +50,10 @@ export default defineConfig({
        * @example
        * 	https://localhost:3000/api/todos/1  ->  https://jsonplaceholder.typicode.com/todos/1
        **/
-      '/demo-api/': {
+      '/api/': {
         target: 'http://services.odata.org/V4/TripPinService/',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/demo-api/, ''),
+        rewrite: (path) => path.replace(/^\/api/, ''),
       },
       '/api-bauth/': {
         target: 'http://127.0.0.1:4004/',

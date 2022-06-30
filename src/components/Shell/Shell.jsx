@@ -11,12 +11,13 @@ import routes from '~react-pages'
 
 const style = {
   shell: {
-    position: 'fixed',
-    width: '100%',
+    overflow: "hidden",
+    top: 0,
+    width: "100%",
     zIndex: 100,
   },
   emptySpace: {
-    paddingTop: '44px',
+    paddingTop: "44px",
   },
 };
 
