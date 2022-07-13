@@ -11,23 +11,16 @@ A template for business developers looking to quickly develop and prototype UI5/
 ## Features
 
 - ⚡️ [Vite 2](https://github.com/vitejs/vite), [pnpm](https://pnpm.js.org/), [ESBuild](https://github.com/evanw/esbuild) - born with fastness
-
 - 🗂 [File based routing](./src/pages)
-
 - ✅ Use [Vitest](http://vitest.dev/) for unit and components testing
-
 - 🦾 TypeScript, of course
-
 - ![Alt text](https://api.iconify.design/logos:vitejs.svg) [Vite](https://github.com/vitejs/vite)
-  
-  - Proxy OData v4 [TripPin](https://www.odata.org/blog/trippin-new-odata-v4-sample-service/) service for demoing
-
+- Proxy OData v4 [TripPin](https://www.odata.org/blog/trippin-new-odata-v4-sample-service/) service for demoing
 - ![Alt text](https://api.iconify.design/vscode-icons:file-type-reactjs.svg) [React](https://github.com/facebook/react) and [UI5 Web Components for React](https://sap.github.io/ui5-webcomponents-react/?path=/docs/getting-started--page)
+- `<img src="https://api.iconify.design/logos:swr.svg" title="" alt="Alt text" width="35">` [SWR](https://swr.vercel.app/) for data fetching, caching, mutations and revalidation
 
-- <img src="https://api.iconify.design/logos:swr.svg" title="" alt="Alt text" width="35"> [SWR](https://swr.vercel.app/) for data fetching, caching, mutations and revalidation
-  
   <!-- - ☁️ Deploy on Netlify, zero-config -->
-  
+
   <!-- - 😃 Use icons from any icon sets in [Pure CSS](https://github.com/antfu/unocss/tree/main/packages/preset-icons) -->
 
 Inspired by the amazing [Vitesse](https://github.com/antfu/vitesse) template.
@@ -69,71 +62,62 @@ npm run start
 
 ## Features Roadmap
 
-- [ ] Navigation Routing
-  
+- [ ] **Navigation Routing**
+
   - [ ] Route as single source of truth => state by route/url-query (for sorting, filtering, etc.), avoid React state whenever possible
-    
+
     - [With React-Router](https://ui.dev/react-router-query-strings)
-      - Why you should lift component state up to the URL <https://youtu.be/sFTGEs2WXQ4>
+      - Why you should lift component state up to the URL [https://youtu.be/sFTGEs2WXQ4](https://youtu.be/sFTGEs2WXQ4)
     - [With useQueryParams hook](https://github.com/pbeshai/use-query-params)
-    - [atomWithHash from "jotai/utils" package](https://betterprogramming.pub/how-and-why-you-should-store-react-ui-state-in-the-url-f2013a204cb2#694f)
+    - [atomWithHash from &#34;jotai/utils&#34; package](https://betterprogramming.pub/how-and-why-you-should-store-react-ui-state-in-the-url-f2013a204cb2#694f)
     - With React-Location
       - [Blog series](https://omarelhawary.me/blog/file-based-routing-with-react-location-data-loaders) about file-based routing for React with React-location
-      - <https://react-location.tanstack.com/>
-  
+      - [https://react-location.tanstack.com/](https://react-location.tanstack.com/)
   - [ ] File based routing with [vite-plugin-pages](https://github.com/hannoeru/vite-plugin-pages) (auto-generated)
-  
+
   - [General Best Practices for Routing](https://www.bigbinary.com/react-best-practices/best-practices-in-react-routing)
-  
+
   - [ ] Enable Launchpad Service integration by supporting semantic objects + pre-filling of fields when navigating
-
-- [x] Front-end tooling with [Vite](https://vitejs.dev/) instead of ([CRAs Webpack](https://www.youtube.com/watch?v=-KEuTPIpLbE)) for application lifecycle management
-
-- [x] i18n
-
-- [x] Authentication hooks
-
+- [X] Front-end tooling with [Vite](https://vitejs.dev/) instead of ([CRAs Webpack](https://www.youtube.com/watch?v=-KEuTPIpLbE)) for application lifecycle management
+- [X] i18n
+- [ ] **Authentication**
+  - [ ] Migrate hooks from ReactQuery to SWR
 - [ ] Typescript migration
+  !!! Do not spend time typing API types !!!
 
+  - [ ] Use inference and type generation from API points whenever possible
 - [ ] Testing _**need to complete porting from CRA_
-  
+
   - [ ] Unit
   - [ ] E2E
 
 - API Management
-  
-  - [x] API proxy with Vite
+
+  - [X] API proxy with Vite
   - [ ] API Mocking and Generation
-    - [x] Mock with json-server
+    - [X] Mock with json-server
     - [ ] Using a [OData client generation](https://sap.github.io/cloud-sdk/docs/js/features/odata/generate-odata-client) for TypeScript interfaces to input to a [faking mock server](https://github.com/satrong/vite-plugin-lessmock)
 
 - [ ] Linting _**need to complete porting from CRA, fix remaining errs_
-
 - [ ] Pre-commit sanity, rename to .husky folder in root after fixing linting issues, and remove ## symbols from package.json props
+- [X] Forms
 
-- [x] Forms
-  
-  - [x] [Formik](https://formik.org/) and [Yup](https://www.npmjs.com/package/yup)
-
+  - [X] [Formik](https://formik.org/) and [Yup](https://www.npmjs.com/package/yup)
 - [ ] Data layer
-  
+
   - SAP Cloud SDK: [Generate an OData client for JavaScript](https://sap.github.io/cloud-sdk/docs/js/features/odata/generate-odata-client)
-
 - [ ] Styling customizations with [UnoCSS](https://github.com/unocss/unocss)
-
 - [ ] State Management with [**Storeon**](https://github.com/storeon/storeon/blob/main/README.md), a tiny, redux-like state manager.
 
 - SAP Product Integration
-  
-  - [ ] Integration with Launchpad Service
+
+  - [ ] 🟢  **Integration with Launchpad Service**
   - [ ] Theme selection via Launchpad settings
-
 - Developer Experience
-  
-  - [ ] Testing Launchpad navigation locally
 
+  - [ ] Testing Launchpad navigation locally
 - Ideas for UI Samples
-  
+
   - [ ] Filterbar with Go button, filters and fuzzy search
   - [ ] Tabbed sections on the Object Page
   - [ ] Texts and Text Arrangement for data fields

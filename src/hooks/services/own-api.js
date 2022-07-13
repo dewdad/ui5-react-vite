@@ -5,7 +5,8 @@ import { set as _set, camelCase, startCase } from 'lodash';
 
 const kebabCaseToPascalCase = (str) => startCase(camelCase(str)).replace(/ /g, '');
 
-// This function provides api function to map route data to api queries and can serve as a good convention
+// This function provides a conventional api function to map route data to api queries allowing for centralized API data
+// access here and allowing a loose coupling with components so that they can be generated dynamically using meta/data managed here
 function routeToODataQuery(explicitRouteToAPIMap){
   let [entity, id] = location.pathname.split('/').slice(1);
   entity = explicitRouteToAPIMap?.Entity ?? kebabCaseToPascalCase(entity);
